@@ -1,0 +1,24 @@
+{% extends 'recipes/base.html' %}
+<!--  -->
+{% block content %} 
+    <h1>Рецепт № {{ object.id }}</h1>
+    <div class="card my-4" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ object.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ object.author }}</h6>
+            <p class="card-text">{{ recipe.description }}</p>
+                <p class="card-text">{{ recipe.ingredients }}</p>
+                <p class="card-text">{{ recipe.cooking_steps }}</p>
+                <p class="card-text">{{ recipe.cooking_time }}</p>
+            <h6 class="card-subtitle mb-2 text-muted">
+                {{ object.updated_at|date:'d F, Y' }}
+            </h6>
+        </div>
+    </div>
+    {% if object.author == user or user.is_staff %}
+        <div class="col-4">
+            <a class="btn btn-outline-info" href="{% url 'recipes_update' object.id %}">Обновить</a>
+            <a class="btn btn-outline-danger" href="{% url 'recipes_delete' object.id %}">Удалить</a>
+        </div>
+    {% endif %}
+{% endblock content %}
