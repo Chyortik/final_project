@@ -28,7 +28,7 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = ['127.0.0.1',
-                 'dima4.pythonanywhere.com']
+                 'dima81.pythonanywhere.com']
 
 # Application definition
 
@@ -85,8 +85,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dima4$default',
-        'USER': 'dima4',
+        'NAME': 'dima81$default',
+        'USER': 'dima81',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
         'HOST': 'dima4.mysql.pythonanywhere-services.com',
         'OPTIONS': {
